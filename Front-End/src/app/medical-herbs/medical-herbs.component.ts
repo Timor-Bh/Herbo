@@ -15,7 +15,7 @@ export class MedicalHerbsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8118/user/products/'+ this.Category )
+    this.http.get('user/products/'+ this.Category )
     .subscribe(result => {this.Products = result['products']; });
     console.log(this.Products);
   }

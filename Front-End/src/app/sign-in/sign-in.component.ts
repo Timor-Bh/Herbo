@@ -27,7 +27,7 @@ SignInStat= false;
 
   onLogin() {
     if (this.Email !== ' ' && this.Password !== ' ' ){
-      this.http.post('http://localhost:8118/log/In', {
+      this.http.post('log/In', {
       email : this.Email,
       Password : this.Password
     }).subscribe(result => {

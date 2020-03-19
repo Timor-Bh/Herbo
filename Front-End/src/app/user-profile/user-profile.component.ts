@@ -47,7 +47,7 @@ User: User;
 constructor(private http: HttpClient,private router: Router ) {
 }
 onDelete(){
-  this.http.patch('http://localhost:8118/user/profile/delete', this.UserId)
+  this.http.patch('user/profile/delete', this.UserId)
   .subscribe ( result => {
     if (result[' message'] === 'Story Liked!!') {
     this.User.accStatus = 'disabled';
@@ -74,7 +74,7 @@ this.edit  = false;
       Location: this.newLocation,
       PhoneNumber: this.newPhoneNumber,
  };
-    this.http.patch( 'http://localhost:8118/user/profile/edit', this.EditedUser).subscribe(docs =>{
+    this.http.patch( 'user/profile/edit', this.EditedUser).subscribe(docs =>{
       console.log(docs);
       localStorage.setItem(this.key, JSON.stringify(docs));
     })

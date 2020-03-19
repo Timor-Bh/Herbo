@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8118/user/products' )
+    this.http.get('user/products' )
     .subscribe(result => {this.Products = result ['product']; });
   }
 }

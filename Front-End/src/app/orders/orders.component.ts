@@ -16,7 +16,7 @@ export class OrdersComponent implements OnInit {
   ngOnInit() {
     console.log(JSON.parse(localStorage.getItem('user'))['result']["_id"]);
 
-    this.http.post('http://localhost:8118/user/orders', {
+    this.http.post('user/orders', {
       currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
     }).subscribe(result => {
       this.order =result["docs"]

@@ -911,7 +911,7 @@ let AddProductComponent = class AddProductComponent {
             photo: this.Photo,
             Sellerid: JSON.parse(localStorage.getItem(this.key))["result"]["_id"],
         };
-        this.http.post('http://localhost:8118/seller/product/add', this.newProduct)
+        this.http.post('seller/product/add', this.newProduct)
             .subscribe(result => console.log(result));
         console.log(this.newProduct);
     }
@@ -1298,7 +1298,7 @@ let CartComponent = class CartComponent {
     }
     ngOnInit() {
         console.log(JSON.parse(localStorage.getItem('user'))['result']["_id"]);
-        this.http.post('http://localhost:8118/user/cart', {
+        this.http.post('user/cart', {
             currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
         }).subscribe(result => {
             console.log(result);
@@ -1308,7 +1308,7 @@ let CartComponent = class CartComponent {
     buyCart() {
         this.Orders.forEach(product => {
             console.log(product._id);
-            this.http.patch('http://localhost:8118/user/cart/buy', {
+            this.http.patch('user/cart/buy', {
                 currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"],
                 productId: product._id,
                 quantity: 5
@@ -1416,7 +1416,7 @@ let CosmeticHerbsComponent = class CosmeticHerbsComponent {
         this.Category = 'cosmeticherbs';
     }
     ngOnInit() {
-        this.http.get('http://localhost:8118/user/products/' + this.Category)
+        this.http.get('user/products/' + this.Category)
             .subscribe(result => { this.Products = result['products']; });
         console.log(this.Products);
     }
@@ -1665,7 +1665,7 @@ let HistoryComponent = class HistoryComponent {
         this.http = http;
     }
     ngOnInit() {
-        this.http.post('http://localhost:8118/history', {
+        this.http.post('history', {
             currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
         }).subscribe(result => {
             console.log(result);
@@ -1770,7 +1770,7 @@ let MedicalHerbsComponent = class MedicalHerbsComponent {
         this.Category = "medicalherbs";
     }
     ngOnInit() {
-        this.http.get('http://localhost:8118/user/products/' + this.Category)
+        this.http.get('user/products/' + this.Category)
             .subscribe(result => { this.Products = result['products']; });
         console.log(this.Products);
     }
@@ -2038,7 +2038,7 @@ let OrdersComponent = class OrdersComponent {
     }
     ngOnInit() {
         console.log(JSON.parse(localStorage.getItem('user'))['result']["_id"]);
-        this.http.post('http://localhost:8118/user/orders', {
+        this.http.post('user/orders', {
             currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
         }).subscribe(result => {
             this.order = result["docs"];
@@ -2095,7 +2095,7 @@ let OurProductsComponent = class OurProductsComponent {
         this.Category = "ourproducts";
     }
     ngOnInit() {
-        this.http.get('http://localhost:8118/user/products/' + this.Category)
+        this.http.get('user/products/' + this.Category)
             .subscribe(result => { this.Products = result['products']; });
     }
 };
@@ -2365,7 +2365,7 @@ let ProductComponent = class ProductComponent {
     OnCancel() {
     }
     ngOnInit() {
-        this.http.get('http://localhost:8118/user/product/' + this.Productid)
+        this.http.get('user/product/' + this.Productid)
             .subscribe(result => {
             this.Product = result['product'];
             console.log(result['product']);
@@ -2378,7 +2378,7 @@ let ProductComponent = class ProductComponent {
     }
     buy() {
         console.log(JSON.parse(localStorage.getItem("user"))["result"]["_id"]);
-        this.http.patch('http://localhost:8118/user/product', {
+        this.http.patch('user/product', {
             productId: this.Productid,
             currentId: JSON.parse(localStorage.getItem("user"))["result"]["_id"],
             quantity: 5,
@@ -2390,7 +2390,7 @@ let ProductComponent = class ProductComponent {
         });
     }
     addToCart() {
-        this.http.post('http://localhost:8118/user/addtocart', {
+        this.http.post('user/addtocart', {
             ProductId: this.Productid,
             currentId: JSON.parse(localStorage.getItem("user"))["result"]["_id"],
             quantity: 5,
@@ -2512,7 +2512,7 @@ let ProductsComponent = class ProductsComponent {
         this.http = http;
     }
     ngOnInit() {
-        this.http.get('http://localhost:8118/user/products')
+        this.http.get('user/products')
             .subscribe(result => { this.Products = result['product']; });
     }
 };
@@ -2574,7 +2574,7 @@ let SignInComponent = class SignInComponent {
     }
     onLogin() {
         if (this.Email !== ' ' && this.Password !== ' ') {
-            this.http.post('http://localhost:8118/log/In', {
+            this.http.post('log/In', {
                 email: this.Email,
                 Password: this.Password
             }).subscribe(result => {
@@ -2675,7 +2675,7 @@ let SignUpComponent = class SignUpComponent {
             Location: this.Location,
             PhoneNumber: this.PhoneNumber,
         };
-        this.http.post('http://localhost:8118/signup', this.User).subscribe(result => console.log(result));
+        this.http.post('signup', this.User).subscribe(result => console.log(result));
         console.log(this.User);
     }
     onSlideStat() {
@@ -2754,7 +2754,7 @@ let UserProfileComponent = class UserProfileComponent {
         this.edit = false;
     }
     onDelete() {
-        this.http.patch('http://localhost:8118/user/profile/delete', this.UserId)
+        this.http.patch('user/profile/delete', this.UserId)
             .subscribe(result => {
             if (result[' message'] === 'Story Liked!!') {
                 this.User.accStatus = 'disabled';
@@ -2781,7 +2781,7 @@ let UserProfileComponent = class UserProfileComponent {
             Location: this.newLocation,
             PhoneNumber: this.newPhoneNumber,
         };
-        this.http.patch('http://localhost:8118/user/profile/edit', this.EditedUser).subscribe(docs => {
+        this.http.patch('user/profile/edit', this.EditedUser).subscribe(docs => {
             console.log(docs);
             localStorage.setItem(this.key, JSON.stringify(docs));
         });

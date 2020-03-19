@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
   constructor(private http: HttpClient,private router : Router) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8118/user/product/'+ this.Productid )
+    this.http.get('user/product/'+ this.Productid )
     .subscribe(result => {
       this.Product = result['product'];
     console.log(result['product']);
@@ -55,7 +55,7 @@ export class ProductComponent implements OnInit {
   buy(){
     console.log(JSON.parse(localStorage.getItem("user"))["result"]["_id"]);
 
-    this.http.patch('http://localhost:8118/user/product',{
+    this.http.patch('user/product',{
 productId : this.Productid,
 currentId : JSON.parse(localStorage.getItem("user"))["result"]["_id"],
 quantity : 5,
@@ -69,7 +69,7 @@ quantity : 5,
 
   }
   addToCart(){
-    this.http.post('http://localhost:8118/user/addtocart',{
+    this.http.post('user/addtocart',{
       ProductId : this.Productid,
       currentId : JSON.parse(localStorage.getItem("user"))["result"]["_id"],
       quantity : 5,

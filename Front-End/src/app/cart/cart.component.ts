@@ -15,7 +15,7 @@ Orders : Order[];
   ngOnInit() {
     console.log(JSON.parse(localStorage.getItem('user'))['result']["_id"]);
 
-    this.http.post('http://localhost:8118/user/cart', {
+    this.http.post('user/cart', {
       currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
     }).subscribe(result => {
       console.log(result);
@@ -29,7 +29,7 @@ Orders : Order[];
     this.Orders.forEach(product => {
       console.log(product._id);
 
-      this.http.patch('http://localhost:8118/user/cart/buy', {
+      this.http.patch('user/cart/buy', {
         currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"],
         productId : product._id,
         quantity : 5

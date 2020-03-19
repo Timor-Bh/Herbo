@@ -64,7 +64,7 @@ export class SignUpComponent implements OnInit {
  };
 
 
-    this.http.post( 'http://localhost:8118/signup', this.User).subscribe(result => console.log(result));
+    this.http.post( 'signup', this.User).subscribe(result => console.log(result));
     console.log(this.User);
 
   }

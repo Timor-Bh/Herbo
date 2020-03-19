@@ -16,7 +16,7 @@ export class HistoryComponent implements OnInit {
 
 
   ngOnInit() {
-    this.http.post('http://localhost:8118/history', {
+    this.http.post('history', {
       currentId: JSON.parse(localStorage.getItem('user'))['result']["_id"]
     }).subscribe(result => {
       console.log(result);

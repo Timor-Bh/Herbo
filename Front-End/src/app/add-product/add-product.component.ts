@@ -42,7 +42,7 @@ export class AddProductComponent implements OnInit {
     photo: this.Photo,
     Sellerid:JSON.parse(localStorage.getItem(this.key))["result"]["_id"],
  }
-    this.http.post( 'http://localhost:8118/seller/product/add', this.newProduct)
+    this.http.post( 'seller/product/add', this.newProduct)
     .subscribe(result => console.log(result));
     console.log(this.newProduct);
 
