@@ -1,0 +1,130 @@
+<section class=" intro-2">
+  <div class="full-bg-img mask rgba-gradient">
+    <div class="container flex-center">
+      <div class="d-flex align-items-center content-height w-100">
+        <div class="row d-flex pt-5 mt-3 w-100">
+          <div class="col-md-6 text-md-left text-md-left mb-5">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="white-text">
+              <h1 style="color:blanchedalmond" class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s" class="Police" >Herbo</h1>
+              <hr style="color:blanchedalmond" class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+              <h2 style="color:blanchedalmond">Sign up right now!</h2>
+
+              <h6 style="color:blanchedalmond" class="wow fadeInLeft" data-wow-delay="0.3s">It’s quick and easy.
+              </h6>
+              <br>
+              <!--<a mdbBtn color="white" outline="true" class="wow fadeInLeft waves-light" data-wow-delay="0.3s"
+                mdbWavesEffect routerLink="/Learn" routerLinkActive="router-link-active">Learn more</a>-->
+            </div>
+          </div>
+
+          <div class="col-md-6 col-xl-5 offset-xl-1"  >
+            <!--Form-->
+            <mdb-card class="wow fadeInRight" data-wow-delay="2s" >
+              <mdb-card-body>
+                <!--Header-->
+
+                <!--Body-->
+              <div>
+                  <div class="md-form" >
+                    <label for="FirstName" class="text-white">First Name</label>
+                    <input type="text" [(ngModel)]="FirstName" id="FirstName" class="text-white form-control" mdbInput></div>
+                  <div class="md-form">
+                    <label for="LastName" class="text-white">Last Name</label>
+                    <input type="text" [(ngModel)]="LastName" id="LastName" class="text-white form-control" mdbInput></div>
+                    <div class="md-form">
+
+
+                        <div class="md-form">
+                          <label for="UserName" class="text-white">User Name</label>
+                          <input type="text" id="UserName" [(ngModel)]="UserName" class="text-white form-control" name="UserName" mdbInput></div>  </div>
+                          <div class="md-form">
+
+
+
+                        <label for="Age" class="text-white">Age</label>
+                        <input type="number" [(ngModel)]="Age" min="13" max="100" id="Age" class="text-white form-control" mdbInput></div>
+                        <div class="md-form">
+
+
+
+                  <div class="md-form">
+                  <label for="email" class="text-white">Your email</label>
+                  <input  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" type="email" id="email" [(ngModel)]="email" class="text-white form-control" mdbInput></div>
+                  </div>
+
+
+                <div class="md-form">
+                   <label for="Password" class="text-white">Your password</label>
+                   <input type="Password" pattern=".{8,}" [(ngModel)]="Password" id="Password" class="text-white form-control" mdbInput>
+                  </div>
+
+                  <div class="md-form">
+                    <label for="Password" class="text-white">Confirm your password</label>
+                    <input type="Password" pattern=".{8,}" [(ngModel)]="ConfirmPassword" id="ConfirmPassword" class="text-white form-control" mdbInput>
+                   </div>
+                  <div class="md-form">
+                    <label for="Address" class="text-white">Address</label>
+                    <input type="text" id="Address" class="text-white form-control" mdbInput>
+                  </div>
+
+                    <div class="md-form">
+                        <label for="PhoneNumber" class="text-white">Phone number</label>
+                        <input type="number" id="PhoneNumber" class="text-white form-control" mdbInput>
+                      </div>
+
+
+    <!-- Default inline 1-->
+                    <div style="margin-left: 75px">
+<div class="custom-control custom-radio custom-control-inline">
+    <input [(ngModel)]="Gender" value="Male" type="radio" class="custom-control-input" id="Male" name="Male" style="color: beige">
+    <label class="custom-control-label" for="Male" style="color: beige">Male</label>
+  </div>
+
+  <!-- Default inline 2-->
+  <div class="custom-control custom-radio custom-control-inline">
+    <input [(ngModel)]="Gender" value="Female" type="radio" class="custom-control-input" id="Female" name="Female" style="color: beige">
+    <label class="custom-control-label" for="Female" style="color: beige">Female</label>
+  </div>
+
+  <!-- Default inline 3-->
+  <div class="custom-control cus§tom-radio custom-control-inline">
+    <input [(ngModel)]="Gender" value="Other" type="radio" class="custom-control-input" id="Other" name="Other" style="color: beige">
+    <label class="custom-control-label" for="Other" style="color: beige">Other</label>
+  </div>
+                  </div>
+                </div>
+                <br>
+
+                    <!-- Material switch -->
+                   <div class="custom-control custom-switch ">
+                        <input type="checkbox" [(ngModel)]="UserType"  value='{{SlideStat}}'  (change)="onSlideStat()" class="custom-control-input" id="UserTypeSwitch" >
+                        <label class="custom-control-label" for="UserTypeSwitch" style="margin-left: 20%; color: beige">Account Type :{{SlideStat}}</label>
+                      </div>
+
+
+
+                              <br>
+
+                <button mdbBtn color="white" outline="true" class="wow fadeInLeft waves-light" data-wow-delay="0.3s"
+                mdbWavesEffect (click)="onSignUp()" type="submit" mdbBtn color="light" mdbWavesEffect style="margin-left: 136px">Sign up</button>
+
+                  <hr class="hr-light mb-3 mt-4">
+                  <a mdbBtn color="white" outline="true" class="wow fadeInLeft waves-light " data-wow-delay="1s"
+                mdbWavesEffect routerLink="/signin" routerLinkActive="router-link-active" style="margin-left: 66px">I already have an account!</a>
+
+              </mdb-card-body>
+            </mdb-card>
+            <br>
+            <!--/.Form-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Material checked -->
+<!--Main Navigation-->

@@ -1,0 +1,73 @@
+    <!--Main Navigation-->
+    <header>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" style=" background-color: #023d07;">
+
+            <div class="container">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand"  ><img style="width: 90px" src="./../../assets/Herbo.png"> </a>
+
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto smooth-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/" routerLinkActive="router-link-active"><i  class="material-icons">home</i> <b> <span style="color: beige"> Home </span></b></a>
+                        </li>
+
+                        <li *ngIf="this.connectionStatus == true" class="nav-item">
+                              <div class="btn-group" mdbDropdown>
+                                      <button type="button" mdbBtn color="transparent"  class="waves-light" mdbWavesEffect><b> <span style="color: beige"> OurProducts </span></b></button>
+                                      <button type="button" mdbDropdownToggle mdbBtn color="transparent" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+                                        mdbWavesEffect style="color: khaki"></button>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" routerLink="/medicalherbs"  routerLinkActive="router-link-active">MedicalHerbs</a>
+                                        <a class="dropdown-item" routerLink="/cosmeticherbs"  routerLinkActive="router-link-active">CosmeticHerbs</a>
+                                        <a class="dropdown-item" routerLink="/ourproducts"  routerLinkActive="router-link-active">OurProducts</a>
+
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" routerLink="/products"  routerLinkActive="router-link-active">AllCategories</a>
+                                      </div>
+                                    </div>
+
+                        </li>
+                        <li class="nav-item">
+
+                      </li>
+                        <li *ngIf="this.connectionStatus == true" class="nav-item">
+                            <a class="nav-link"  routerLink="/ourstory"  routerLinkActive="router-link-active" ><b> <span style="color: beige"> OurStory </span></b></a>
+                        </li>
+                    </ul>
+
+
+                    <!-- Links -->
+
+                    <!-- Social Icon  -->
+
+                </div>
+                <li *ngIf="this.connectionStatus == true" class="nav-item">
+                      <div class="btn-group" mdbDropdown>
+                              <button type="button" mdbBtn color="transparent"  class="waves-light" mdbWavesEffect><b> <span style="color: beige"> Profile </span></b></button>
+                              <button type="button" mdbDropdownToggle mdbBtn color="transparent" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+                                mdbWavesEffect style="color: #f0e68c"></button>
+                              <div class="dropdown-menu">
+                                <a *ngIf="this.connectionStatus == true" class="dropdown-item waves-light" mdbWavesEffect routerLink="/profile">My account</a>
+                                <a *ngIf="this.connectionStatus == true" class="dropdown-item waves-light" mdbWavesEffect routerLink="/cart">Cart</a>
+                                <a *ngIf="this.connectionStatus == true"class="dropdown-item waves-light" mdbWavesEffect (click)= "onLogOut()" >Log Out</a>
+                              </div>
+                            </div>
+</li>
+                            <button *ngIf="this.connectionStatus == false" mdbBtn type="button" color="white" rounded="true" routerLink="/signup"  outline="true" mdbWavesEffect>Join Us</button>
+                <!-- Collapsible content -->
+
+            </div>
+        </nav>
+        <!--/.Navbar-->

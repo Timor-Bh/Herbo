@@ -1,0 +1,163 @@
+<section class=" intro-2">
+  <div class="full-bg-img mask rgba-gradient">
+    <div class="container flex-center">
+      <div class="d-flex align-items-center content-height w-100">
+        <div class="row d-flex pt-5 mt-3 w-100">
+<br>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+    <div class="col-md-8">
+    <mdb-card cascade="true" wider="true" reverse="true" class="my-4">
+    <!--Card image-->
+    <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+    <mdb-card-img src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"></mdb-card-img>
+    <a>
+    <div class="mask rgba-white-slight"></div>
+    </a>
+    </div>
+
+    <mdb-card-body cascade="true" class="text-center">
+
+      <!--Title-->
+      <div class="bio-info">
+
+					  <div class="col-md-12">
+						<div class="bio-image">
+
+              <img src="{{this.ProfileImage}}" alt="{{this.UserName}}" height="200" width="200" />
+              <input   *ngIf="this.edit==true" [(ngModel)]="ProfileImage" name="ProfileImage" class="file-path"  type="number" placeholder="{{this.UserName}}">
+              </div>
+
+			  <div class="col-md-6">
+				<div class="bio-content">
+
+          <br>
+          <div  id="test2" class="row">
+          <div class="col-md-6"><h5>User Name:</h5> <h5 *ngIf="this.edit==false"></h5></div>
+          <div class="col-md-6"><label><input [(ngModel)]="ProfileImage" name="ProfileImage" *ngIf="this.edit==true" class="file-path" type="text" placeholder="{{this.UserName}}"><p>{{this.UserName}}</p></label></div>
+          </div>
+          <br>
+          <div class="row">
+          <div class="col-md-6"><h5>First name:</h5> <h5 *ngIf="this.edit==false"></h5></div>
+          <div class="col-md-6"><label><input [(ngModel)]="ProfileImage" name="ProfileImage"  *ngIf="this.edit==true" class="file-path" type="text" placeholder="{{this.FirstName}}"><p>{{this.FirstName}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5>Last name:</h5> <h5 *ngIf="this.edit==false"></h5></div>
+          <div class="col-md-6"><label><input [(ngModel)]="LastName" name="LastNamzs" *ngIf="this.edit==true" class="file-path" type="text" placeholder="{{this.LastName}}"><p>{{this.LastName}}</p></label></div>
+          </div>
+          <br>
+
+          <div  class="row">
+          <div class="col-md-6"><h5>Age:</h5> <h5 *ngIf="this.edit==false"></h5></div>
+          <div class="col-md-3" ><label><input  [(ngModel)]="Age" name="Age" *ngIf="this.edit==true"  class="file-path"  type="number" placeholder="{{this.Age}}"><p>{{this.Age}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5 *ngIf="this.edit==false">Gender:</h5> </div>
+          <div class="col-md-6"><label> <p>{{this.Gender}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5 *ngIf="this.edit==false">Email:</h5></div>
+          <div class="col-md-6"><label><input [(ngModel)]="newemail" name="newemail"  *ngIf="this.edit==true" class="file-path" type="email" placeholder="{{this.email}}" ><p>{{this.email}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5 *ngIf="this.edit==false">Password:</h5> </div>
+          <div class="col-md-6"><label><input [(ngModel)]="newPassword" name="newPassword" *ngIf="this.edit==true" class="file-path" type=password placeholder="{{this.Password}}"><p>{{this.Password}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5 *ngIf="this.edit==false">Account Type:</h5></div>
+          <div class="col-md-6"><label><p></p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"><h5 *ngIf="this.edit==false">Address:</h5></div>
+          <div class="col-md-6"><label><input [(ngModel)]="newLocation" name="newLocation" *ngIf="this.edit==true" class="file-path" type="text" placeholder="{{this.Location}}"><p>{{this.Location}}</p></label></div>
+          </div>
+          <br>
+
+          <div class="row">
+          <div class="col-md-6"> <h5 *ngIf="this.edit==false">Phone number:</h5></div>
+          <div class="col-md-4"><label><input [(ngModel)]="newPhoneNumber" name="newPhoneNumber" *ngIf="this.edit==true"  class="file-path"  type="number" min="10000000" max="99999999" placeholder="{{this.PhoneNumber}}"><p>{{this.PhoneNumber}}</p></label></div>
+          </div>
+          <br>
+          <br>
+
+          <button class="col-md-6" *ngIf="this.edit== true" (click)="onCancel()" mdbBtn type="button" color="danger" rounded="true" outline="true" mdbWavesEffect>Cancel</button>
+
+
+          <button class="col-md-6" *ngIf="this.edit== true" (click)="onValidate()" mdbBtn type="button" color="default" rounded="true" outline="true" mdbWavesEffect>Confirm</button>
+          </div>
+          </div>
+          </div>
+		  	  </div>
+    </mdb-card-body>
+    </mdb-card>
+    </div>
+      <div class="col-md-4">
+      <div class="container">
+                <div class="col">
+                <br>
+                <br>
+                <br>
+                <h3>User</h3>
+                <br>
+                <ul class="list-unstyled"><a mdbPageScroll (click) ="onEdit()">Edit account</a></ul>
+                <a mdbPageScroll (click) ="onDelete()">Delete account </a>
+                <br>
+                <a [routerLink]="['/orders']" routerLinkActive="router-link-active" >See orders</a>
+                <br>
+                <a [routerLink]="['/history']" routerLinkActive="router-link-active">See history</a>
+                <br>
+                <a>See favourites</a>
+                <br>
+                <br>
+                </div>
+
+                <div *ngIf="this.UserType !== 'user'" class="col">
+                <br>
+                <br>
+                <h3>Seller</h3>
+                <br>
+                <ul class="list-unstyled">
+                <li>
+                <a mdbPageScroll routerLink='/addproduct'>Add product</a>
+                </li>
+                </ul>
+
+                <a>Edit product</a>
+                <br>
+                <a>Delete product</a>
+                <br>
+                <a>See orders</a>
+                <br>
+                <br>
+                <br>
+                </div>
+
+          <div *ngIf="this.UserType =='admin'" class="col">
+          <br>
+          <br>
+          <br>
+          <h3>Admin </h3>
+          <br>
+          <a>See users</a>
+          <br>
+          <a>Upgrade user</a>
+          <br>
+          <a>Verify user</a>
+          <br>
+          <a>Delete user</a>
+
+<body class="mdb-skin">

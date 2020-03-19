@@ -1,0 +1,10 @@
+<!-- <app-order *ngFor="let order of Orders" [order] = "order" ></app-order> -->
+<div *ngFor="let product of order" class="card" style="width: 18rem;">
+    <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title">{{product.productId}}</h5>
+      <p class="card-text">{{product.Uprice}}</p>
+      <p class="card-text">{{product.Uprice}}</p>
+      <!-- <a href="#" class="btn btn-primary">{{product.Quantity}}</a> -->
+    </div>
+  </div>

@@ -1,0 +1,55 @@
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item style="height: 15cm">
+    <div class="view w-100">
+      <img class="d-block w-100" src="https://ak3.picdn.net/shutterstock/videos/24297563/thumb/1.jpg" alt="First slide">
+      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+
+        <a href="#!" mdbBtn color="white" outline="true" rounded="true" class="waves-light" mdbWavesEffect>learn more</a>
+
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item style="height: 15cm">
+    <div class="view w-100">
+      <img class="d-block w-100" src="https://seekingpsychotherapy.files.wordpress.com/2012/01/stxchng-1377699_mint.jpg" alt="Second slide">
+      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+        <a href="#!" mdbBtn color="white" outline="true" rounded="true" class="waves-light" mdbWavesEffect>learn more</a>
+
+    </div>
+  </mdb-carousel-item>
+  <mdb-carousel-item style="height: 15cm">
+    <div class="view w-100">
+      <img class="d-block w-100" src="https://ak6.picdn.net/shutterstock/videos/11378516/thumb/1.jpg" alt="Third slide">
+      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+    </div>
+    <div class="carousel-caption">
+        <a href="#!" mdbBtn color="white" outline="true" rounded="true" class="waves-light" mdbWavesEffect>learn more</a>
+
+    </div>
+  </mdb-carousel-item>
+</mdb-carousel>
+<mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'"
+[animation]="'slide'">
+<mdb-carousel-item *ngFor="let item of slides; let i = index">
+  <div class="col-md-4" [ngClass]="{'d-none d-md-block': cardIndex !== 0}" *ngFor="let card of item; let cardIndex = index">
+    <mdb-card class="my-1">
+      <mdb-card-img [src]="card.img" alt="Card image cap"></mdb-card-img>
+      <mdb-card-body>
+        <mdb-card-title>
+          <h4>{{card.title}}</h4>
+        </mdb-card-title>
+        <p>{{card.description}}</p>
+        <a  mdbBtn color="primary" class="waves-light" mdbWavesEffect>{{card.buttonText}}</a>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</mdb-carousel-item>
+</mdb-carousel>
+
+<br>
+
+
+

@@ -1,0 +1,48 @@
+.intro-2 {
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(2).jpg")no-repeat center center;
+  background-size: cover;
+}
+h3 {
+  font-family: 'Cookie', cursive;
+}
+h1 {
+  font-family: 'Enriqueta', serif;
+}
+h4 {
+  font-family: 'Yrsa', serif;
+}
+
+.app-button{
+  width: 150px;
+  margin:0 20px;
+  display:inline-block;
+  line-height: 60px;
+}
+
+// body,
+// html {
+//   height: 100%;
+// }
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-item + .flex-item {
+  margin-left: 10px;
+}
+
+.cmntbtn {
+  margin-top: 15px;
+  background-color: #0066FF;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  max-width: 300;
+}
