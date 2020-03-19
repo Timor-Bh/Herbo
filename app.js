@@ -13,7 +13,7 @@ const SellerRoutes = require("./Api/Routes/Seller");
 const UserRoutes = require("./Api/Routes/User");
 
 const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://herbowebsite:herbo12345678@cluster0-pqm8c.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://Ahmed:ahmedpass@ahmed-dammn.gcp.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser:true});
 
 app.use("/signup", signUpRoutes);
 app.use("/log", logRoutes);
