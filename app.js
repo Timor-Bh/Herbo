@@ -22,6 +22,6 @@ app.use("/seller", SellerRoutes);
 app.use("/user", UserRoutes);
 
 const path = require("path");
-app.use(express.static(path.join(__dirname,'/Front-End/dist/Front-End')));
+app.use(express.static(path.join(__dirname,'/Front-EndBuild')));
 
 module.exports = app;
